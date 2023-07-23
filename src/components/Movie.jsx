@@ -28,7 +28,10 @@ const Movie = (props) => {
   };
 
   return props.movie?.backdrop_path ? (
-    <div className="w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative p-2 hover:scale-105 duration-200">
+    <div
+      className="w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block 
+      cursor-pointer relative p-2 hover:scale-105 duration-200"
+    >
       <img
         src={`https://image.tmdb.org/t/p/w500/${props.movie?.backdrop_path}`}
         className="w-full h-full block"

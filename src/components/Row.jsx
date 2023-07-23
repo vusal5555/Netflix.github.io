@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
-
 import Movie from "./Movie";
 
 const Row = ({ title, fetchURL, rowId }) => {
@@ -22,13 +21,13 @@ const Row = ({ title, fetchURL, rowId }) => {
     slider.scrollLeft = slider.scrollLeft + 500;
   };
   return (
-    <div>
+    <div className="w-full h-full">
       <h2 className="text-white md:text-xl font-bold p-4">{title}</h2>
       <div className="relative flex items-center group">
         <MdChevronLeft
+          onClick={() => slideLeft()}
           size={40}
           className="bg-white rounded-full absolute left-0 opacity-50 hover:opacity-100 z-50  hidden group-hover:block"
-          onClick={() => slideLeft()}
         ></MdChevronLeft>
         <div
           className="w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative"
@@ -39,9 +38,9 @@ const Row = ({ title, fetchURL, rowId }) => {
           })}
         </div>
         <MdChevronRight
-          size={40}
-          className="bg-white  rounded-full absolute right-0 opacity-50 hover:opacity-100 z-50 hidden group-hover:block"
           onClick={() => slideRight()}
+          size={40}
+          className="bg-white rounded-full absolute right-0 opacity-50 hover:opacity-100 z-50 hidden group-hover:block"
         ></MdChevronRight>
       </div>
     </div>
